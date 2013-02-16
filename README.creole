@@ -1,0 +1,7 @@
+== DevJoined
+
+DevJoined tells you when a developer of a plugin joined the server
+
+=== Compiling
+
+Maven 3 is required to compile DevJoined

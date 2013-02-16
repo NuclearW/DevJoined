@@ -1,0 +1,5 @@
+name: DevJoined
+main: com.nuclearw.devjoined.DevJoined
+version: ${project.version}
+author: NuclearW
+description: DevJoined tells you when a developer of a plugin joined the server
