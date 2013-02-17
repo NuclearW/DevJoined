@@ -34,6 +34,10 @@ public class PlayerListener implements Listener {
 				format += "-last";
 			}
 
+			if(plugins.size() == 1) {
+				format += "-singular";
+			}
+
 			pluginsFormatted += plugin.getLocale().getString(format, p);
 		}
 
