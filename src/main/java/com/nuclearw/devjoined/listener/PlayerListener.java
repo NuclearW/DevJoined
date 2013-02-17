@@ -25,20 +25,28 @@ public class PlayerListener implements Listener {
 
 		String pluginsFormatted = "";
 
+		int i = 0;
 		Iterator<String> iterator = plugins.iterator();
 		while(iterator.hasNext()) {
 			String p = iterator.next();
 
 			String format = "format";
-			if(!iterator.hasNext()) {
-				format += "-last";
-			}
 
-			if(plugins.size() == 1) {
-				format += "-singular";
+			if(plugins.size() <= i + 2) {
+				if(!iterator.hasNext() && plugins.size() != 1) {
+					format += "-last";
+				} else {
+					format += "-last-singular";
+				}
 			}
 
 			pluginsFormatted += plugin.getLocale().getString(format, p);
+
+			if(plugins.size() > i + 2) {
+				pluginsFormatted += plugin.getLocale().getString("separator");
+			}
+
+			i++;
 		}
 
 		String message = plugin.getLocale().getString("joined", event.getPlayer().getName(), pluginsFormatted);
