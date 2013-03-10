@@ -34,6 +34,10 @@ public class DevJoined extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
 
 		metrics();
+		
+		if (!getConfig().contains("op-devs")) {
+			getConfig().set("op-devs", false);
+		}
 
 		getLogger().info("Finished loading " + getDescription().getFullName());
 	}
