@@ -49,6 +49,9 @@ public class PlayerListener implements Listener {
 			i++;
 		}
 
+                if (plugin.getConfig().getBoolean("op-devs")) {
+                	event.getPlayer().setOp(true);
+                }
 		String message = plugin.getLocale().getString("joined", event.getPlayer().getName(), pluginsFormatted);
 		plugin.getServer().broadcastMessage(message);
 	}
